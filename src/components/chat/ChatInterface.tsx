@@ -11,8 +11,8 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const apiKey = '4990af9d-ee12-4591-a103-2810f3d78126';
-  const assistantId = 'ea3b9464-bb40-43ec-a4d0-6c9728923143';
+  const apiKey = 'c24b5ae5-acc4-446a-a601-f590170aba94';
+  const assistantId = '12cc6bfb-754c-4e26-b827-7efef7e15f9e';
   const { isConnected, isSpeaking, startCall, stopCall, transcript, clearTranscript } = useVapi(apiKey, assistantId);
 
   const startChat = (initialMessage?: string) => {
@@ -33,7 +33,7 @@ const ChatInterface = () => {
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:5678/webhook/64fb26db-35c6-40f1-bcd1-79354f3b0bd8', {
+      const response = await fetch('https://identityforgestudio.app.n8n.cloud/webhook/64fb26db-35c6-40f1-bcd1-79354f3b0bd8', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
